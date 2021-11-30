@@ -1,0 +1,68 @@
+.div-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+
+  mat-card {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 10px;
+  }
+
+  label {
+    margin: 5px;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+    display: inline-block;
+    font-size: large;
+  }
+
+  input {
+    max-width: 100px;
+    margin: 5px;
+    display: inline-block;
+    font-size: large;
+    text-transform: uppercase;
+  }
+
+  .div-content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+
+    div {
+      align-items: center;
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+  }
+
+  .div-meta {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .div-result {
+    display: flex;
+    flex-direction: column;
+
+    .div-result-header {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .div-result-body {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+
+      .div-result-body-data {
+        border: 2px solid green;
+        flex: 1;
+        margin: 5px;
+        height: 450px;
+      }
+    }
+  }
+}
