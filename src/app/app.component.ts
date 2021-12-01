@@ -3,6 +3,7 @@ import { Component, HostBinding } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { MatSelectChange } from '@angular/material/select';
 import * as moment from 'moment';
+import { environment } from 'src/environments/environment';
 import { OptionData } from './models/option-data';
 import { TickerMetaData } from './models/ticker-meta';
 import { ApiService } from './services/api.service';
@@ -15,6 +16,7 @@ import { ApiService } from './services/api.service';
 export class AppComponent {
   private _selectedExpiry: string | undefined;
 
+  serverUrl = environment.serverUrl;
   title = 'options-yield-ui';
   ticker = new FormControl('');
   daysToExpiry: string = '--';
