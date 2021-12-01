@@ -14,6 +14,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTableModule } from '@angular/material/table';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatMenuModule } from '@angular/material/menu';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,9 +23,19 @@ import { HttpClientModule } from '@angular/common/http';
 import { DataTableComponent } from './components/data-table/data-table.component';
 import { OptionsGraphComponent } from './components/options-graph/options-graph.component';
 import { ChartsModule } from 'ng2-charts';
+import { ExploreComponent } from './components/explore/explore.component';
+import { SummaryComponent } from './components/summary/summary.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 @NgModule({
-  declarations: [AppComponent, DataTableComponent, OptionsGraphComponent],
+  declarations: [
+    AppComponent,
+    DataTableComponent,
+    OptionsGraphComponent,
+    ExploreComponent,
+    SummaryComponent,
+    PageNotFoundComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -46,6 +57,7 @@ import { ChartsModule } from 'ng2-charts';
     MatTableModule,
     ChartsModule,
     MatProgressBarModule,
+    MatMenuModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

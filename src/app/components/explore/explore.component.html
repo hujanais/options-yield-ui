@@ -1,0 +1,76 @@
+<div class="container">
+  <mat-card>
+    <div>
+      <div class="div-meta">
+        <label for="name">Ticker: </label>
+        <input id="name" type="text" [formControl]="ticker" />
+        <button mat-raised-button color="primary" (click)="onGetMeta()">
+          Get meta-data
+        </button>
+        <div>
+          <mat-form-field appearance="fill">
+            <mat-label>Expiry Date</mat-label>
+            <mat-select [(value)]="selectedExpiry">
+              <mat-option
+                *ngFor="let expirydate of metaData.expirationDates"
+                [value]="expirydate"
+              >
+                {{ expirydate }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+    <div>
+      {{ debugMessage | json }}
+    </div>
+  </mat-card>
+  <mat-card>
+    <div class="div-result">
+      <div class="div-result-header">
+        <div>{{ metaData.ticker | uppercase }}</div>
+        <div>${{ metaData.price | number: "1.2-2" }}</div>
+        <div>{{ selectedExpiry }}</div>
+        <div>{{ daysToExpiry }} to expiry</div>
+      </div>
+      <div class="div-result-body">
+        <div class="div-result-body-data">
+          <app-options-graph [optionsData]="optionsData"></app-options-graph>
+        </div>
+        <div class="div-result-body-data">
+          <app-data-table [optionsData]="optionsData"></app-data-table>
+        </div>
+      </div>
+    </div>
+  </mat-card>
+  <!-- <mat-card>
+    <div>
+      <div class="div-meta">
+        <label for="name">Ticker: </label>
+        <input id="name" type="text" [formControl]="ticker" />
+        <button mat-raised-button color="primary" (click)="onGetMeta()">
+          Get meta-data
+        </button>
+        <div class="div-meta">
+          <div>
+            <mat-form-field appearance="fill">
+              <mat-label>Expiry Date</mat-label>
+              <mat-select [(value)]="selectedExpiry">
+                <mat-option
+                  *ngFor="let expirydate of metaData.expirationDates"
+                  [value]="expirydate"
+                >
+                  {{ expirydate }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <div>
+        {{ debugMessage | json }}
+      </div>
+    </div>
+  </mat-card> -->
+</div>
