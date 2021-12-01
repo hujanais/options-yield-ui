@@ -29,10 +29,12 @@
   <mat-card>
     <div class="div-result">
       <div class="div-result-header">
-        <div>{{ metaData.ticker | uppercase }}</div>
-        <div>${{ metaData.price | number: "1.2-2" }}</div>
-        <div>{{ selectedExpiry }}</div>
-        <div>{{ daysToExpiry }} to expiry</div>
+        <div>
+          {{ metaData.ticker | uppercase }} ${{
+            metaData.price | number: "1.2-2"
+          }}
+          expiry : {{ daysToExpiry }}
+        </div>
       </div>
       <div class="div-result-body">
         <div class="div-result-body-data">

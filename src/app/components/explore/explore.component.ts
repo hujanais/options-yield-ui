@@ -1,6 +1,7 @@
 import { HttpResponse, HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { MatSnackBar, MatSnackBarRef } from '@angular/material/snack-bar';
 import * as moment from 'moment';
 import { OptionData } from 'src/app/models/option-data';
 import { TickerMetaData } from 'src/app/models/ticker-meta';
@@ -28,9 +29,9 @@ export class ExploreComponent implements OnInit {
 
   optionsData: OptionData[] = [];
 
-  debugMessage: any = 'hello';
+  debugMessage: any = undefined;
 
-  constructor(private api: ApiService) {}
+  constructor(private api: ApiService, private snackBar: MatSnackBar) {}
 
   ngOnInit(): void {}
 
@@ -46,14 +47,21 @@ export class ExploreComponent implements OnInit {
 
   getPuts(): void {
     if (!this.selectedExpiry) return;
+
+    let sbRef = this.snackBar.open('Retrieving ExpiryDates...', undefined, {
+      horizontalPosition: 'left',
+      verticalPosition: 'top',
+    });
+
     this.api.getPutOptions(this.ticker.value, this.selectedExpiry).subscribe({
       next: (v: HttpResponse<OptionData[]>) => {
         if (v.body) {
-          this.debugMessage = 'getPuts-ok';
           this.optionsData = v.body;
+          sbRef.dismiss();
         }
       },
       error: (e: HttpErrorResponse) => {
+        sbRef.dismiss();
         this.debugMessage = {
           status: e.status,
           error: e.error,
@@ -63,14 +71,24 @@ export class ExploreComponent implements OnInit {
   }
 
   onGetMeta(): void {
+    // clear the screen.
+    this.metaData = { ticker: '----', price: -1.0, expirationDates: [] };
+    this.debugMessage = undefined;
+
+    let sbRef = this.snackBar.open('Retrieving Data...', undefined, {
+      horizontalPosition: 'left',
+      verticalPosition: 'top',
+    });
+
     this.api.getMeta(this.ticker.value).subscribe({
       next: (v: HttpResponse<TickerMetaData>) => {
+        sbRef.dismiss();
         if (v.body) {
-          this.debugMessage = 'ok';
           this.metaData = v.body;
         }
       },
       error: (e: HttpErrorResponse) => {
+        sbRef.dismiss();
         this.debugMessage = {
           status: e.status,
           error: e.error,
