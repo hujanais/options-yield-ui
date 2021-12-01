@@ -13,6 +13,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTableModule } from '@angular/material/table';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -44,6 +45,7 @@ import { ChartsModule } from 'ng2-charts';
     MatSelectModule,
     MatTableModule,
     ChartsModule,
+    MatProgressBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,30 +1,30 @@
 <div class="darkMode div-container">
-  <mat-toolbar color="primary">
-    Sell-Put Yield {{ serverUrl }}
-    <div class="flex-stretch"></div>
-  </mat-toolbar>
+  <mat-toolbar color="primary">Sell-Put Yield Viewer </mat-toolbar>
 
   <div class="div-content mat-app-background">
     <mat-card>
-      <div class="div-meta">
-        <label for="name">Ticker: </label>
-        <input id="name" type="text" [formControl]="ticker" />
-        <button mat-raised-button color="primary" (click)="onGetMeta()">
-          Get meta-data
-        </button>
-        <div>Expiry Dates:</div>
-        <div>
-          <mat-form-field appearance="fill">
-            <mat-label>Expiry Date</mat-label>
-            <mat-select [(value)]="selectedExpiry">
-              <mat-option
-                *ngFor="let expirydate of metaData.expirationDates"
-                [value]="expirydate"
-              >
-                {{ expirydate }}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
+      <div>
+        <div class="div-meta">
+          <label for="name">Ticker: </label>
+          <input id="name" type="text" [formControl]="ticker" />
+          <button mat-raised-button color="primary" (click)="onGetMeta()">
+            Get meta-data
+          </button>
+          <div class="div-meta">
+            <div>
+              <mat-form-field appearance="fill">
+                <mat-label>Expiry Date</mat-label>
+                <mat-select [(value)]="selectedExpiry">
+                  <mat-option
+                    *ngFor="let expirydate of metaData.expirationDates"
+                    [value]="expirydate"
+                  >
+                    {{ expirydate }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div>
         </div>
         <div>
           {{ debugMessage | json }}

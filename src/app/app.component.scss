@@ -19,10 +19,9 @@
   }
 
   input {
-    max-width: 100px;
+    max-width: 50px;
     margin: 5px;
     display: inline-block;
-    font-size: large;
     text-transform: uppercase;
   }
 
@@ -41,6 +40,7 @@
   .div-meta {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
   }
 
   .div-result {
@@ -61,6 +61,7 @@
         border: 2px solid green;
         flex: 1;
         margin: 5px;
+        max-width: 50%;
         height: 450px;
       }
     }
