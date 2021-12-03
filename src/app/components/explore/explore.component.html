@@ -38,7 +38,22 @@
       </div>
       <div class="div-result-body">
         <div class="div-result-body-data">
-          <app-options-graph [optionsData]="optionsData"></app-options-graph>
+          <mat-tab-group>
+            <mat-tab label="option-yield">
+              <div class="div-result-tabbed-body">
+                <app-options-graph
+                  [optionsData]="optionsData"
+                ></app-options-graph>
+              </div>
+            </mat-tab>
+            <mat-tab label="historical price">
+              <div class="div-result-tabbed-body">
+                <app-price-graph
+                  [priceData]="metaData.historicalPrices"
+                ></app-price-graph>
+              </div>
+            </mat-tab>
+          </mat-tab-group>
         </div>
         <div class="div-result-body-data">
           <app-data-table [optionsData]="optionsData"></app-data-table>
@@ -46,33 +61,4 @@
       </div>
     </div>
   </mat-card>
-  <!-- <mat-card>
-    <div>
-      <div class="div-meta">
-        <label for="name">Ticker: </label>
-        <input id="name" type="text" [formControl]="ticker" />
-        <button mat-raised-button color="primary" (click)="onGetMeta()">
-          Get meta-data
-        </button>
-        <div class="div-meta">
-          <div>
-            <mat-form-field appearance="fill">
-              <mat-label>Expiry Date</mat-label>
-              <mat-select [(value)]="selectedExpiry">
-                <mat-option
-                  *ngFor="let expirydate of metaData.expirationDates"
-                  [value]="expirydate"
-                >
-                  {{ expirydate }}
-                </mat-option>
-              </mat-select>
-            </mat-form-field>
-          </div>
-        </div>
-      </div>
-      <div>
-        {{ debugMessage | json }}
-      </div>
-    </div>
-  </mat-card> -->
 </div>

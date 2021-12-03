@@ -25,6 +25,7 @@ export class ExploreComponent implements OnInit {
     ticker: 'NaN',
     price: -1.0,
     expirationDates: [],
+    historicalPrices: [],
   };
 
   optionsData: OptionData[] = [];
@@ -72,7 +73,12 @@ export class ExploreComponent implements OnInit {
 
   onGetMeta(): void {
     // clear the screen.
-    this.metaData = { ticker: '----', price: -1.0, expirationDates: [] };
+    this.metaData = {
+      ticker: '----',
+      price: -1.0,
+      expirationDates: [],
+      historicalPrices: [],
+    };
     this.debugMessage = undefined;
 
     let sbRef = this.snackBar.open('Retrieving Data...', undefined, {

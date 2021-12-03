@@ -12,6 +12,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatTabsModule } from '@angular/material/tabs';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -23,6 +24,7 @@ import { ChartsModule } from 'ng2-charts';
 import { ExploreComponent } from './components/explore/explore.component';
 import { SummaryComponent } from './components/summary/summary.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { PriceGraphComponent } from './components/price-graph/price-graph.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     ExploreComponent,
     SummaryComponent,
     PageNotFoundComponent,
+    PriceGraphComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,6 +55,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     MatProgressBarModule,
     MatMenuModule,
     MatSnackBarModule,
+    MatTabsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
