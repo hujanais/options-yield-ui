@@ -3,5 +3,6 @@ export type OptionData = {
   Offset: number;
   Percentage: number;
   LastPrice: number;
+  Volume: number;
   OpenInterest: number;
 };
