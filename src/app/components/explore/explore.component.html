@@ -37,7 +37,52 @@
         </div>
       </div>
       <div class="div-result-body">
-        <div class="div-result-body-data">
+        <mat-tab-group>
+          <mat-tab label="historical price">
+            <div class="div-tab-body">
+              <app-price-graph
+                [priceData]="metaData.historicalPrices"
+              ></app-price-graph>
+            </div>
+          </mat-tab>
+          <mat-tab label="put-options">
+            <div class="div-tab-body">
+              <div class="div-2-column-body">
+                <div class="div-column">
+                  <app-options-graph
+                    [optionsData]="putOptionsData"
+                  ></app-options-graph>
+                </div>
+                <div class="div-column">
+                  <app-data-table
+                    [optionsData]="putOptionsData"
+                    [sortDirection]="1"
+                  ></app-data-table>
+                </div>
+              </div>
+            </div>
+          </mat-tab>
+          <mat-tab label="call-options">
+            <div class="div-tab-body">
+              <div class="div-tab-body">
+                <div class="div-2-column-body">
+                  <div class="div-column">
+                    <app-options-graph
+                      [optionsData]="callOptionsData"
+                    ></app-options-graph>
+                  </div>
+                  <div class="div-column">
+                    <app-data-table
+                      [optionsData]="callOptionsData"
+                      [sortDirection]="-1"
+                    ></app-data-table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </mat-tab>
+        </mat-tab-group>
+        <!-- <div class="div-result-body-data">
           <mat-tab-group>
             <mat-tab label="option-yield">
               <div class="div-result-tabbed-body">
@@ -57,7 +102,7 @@
         </div>
         <div class="div-result-body-data">
           <app-data-table [optionsData]="optionsData"></app-data-table>
-        </div>
+        </div> -->
       </div>
     </div>
   </mat-card>

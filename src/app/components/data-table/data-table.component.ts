@@ -20,10 +20,14 @@ export class DataTableComponent implements OnInit {
   public dataSource: MatTableDataSource<OptionData> =
     new MatTableDataSource<OptionData>();
 
+  @Input() sortDirection: 1 | -1 = 1;
+
   @Input() set optionsData(data: OptionData[]) {
     this._optionsData.length = 0;
     this._optionsData = [...data];
-    this.dataSource.data = [...data].sort((a, b) => b.Strike - a.Strike);
+    this.dataSource.data = [...data].sort(
+      (a, b) => (b.Strike - a.Strike) * this.sortDirection
+    );
   }
 
   get optionsData() {

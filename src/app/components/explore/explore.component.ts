@@ -28,7 +28,8 @@ export class ExploreComponent implements OnInit {
     historicalPrices: [],
   };
 
-  optionsData: OptionData[] = [];
+  putOptionsData: OptionData[] = [];
+  callOptionsData: OptionData[] = [];
 
   debugMessage: any = undefined;
 
@@ -44,6 +45,7 @@ export class ExploreComponent implements OnInit {
     this._selectedExpiry = val;
     this.daysToExpiry = moment(val, 'MM-DD-YYYY').fromNow();
     this.getPuts();
+    this.getCalls();
   }
 
   getPuts(): void {
@@ -57,7 +59,35 @@ export class ExploreComponent implements OnInit {
     this.api.getPutOptions(this.ticker.value, this.selectedExpiry).subscribe({
       next: (v: HttpResponse<OptionData[]>) => {
         if (v.body) {
-          this.optionsData = v.body;
+          this.putOptionsData = v.body;
+          sbRef.dismiss();
+        }
+      },
+      error: (e: HttpErrorResponse) => {
+        sbRef.dismiss();
+        this.debugMessage = {
+          status: e.status,
+          error: e.error,
+        };
+      },
+    });
+  }
+
+  getCalls(): void {
+    if (!this.selectedExpiry) return;
+
+    let sbRef = this.snackBar.open('Retrieving ExpiryDates...', undefined, {
+      horizontalPosition: 'left',
+      verticalPosition: 'top',
+    });
+
+    this.api.getCallOptions(this.ticker.value, this.selectedExpiry).subscribe({
+      next: (v: HttpResponse<OptionData[]>) => {
+        if (v.body) {
+          this.callOptionsData = v.body;
+          this.callOptionsData.sort(
+            (a: OptionData, b: OptionData) => b.Offset - a.Offset
+          );
           sbRef.dismiss();
         }
       },

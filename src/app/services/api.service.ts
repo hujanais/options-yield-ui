@@ -21,6 +21,18 @@ export class ApiService {
     );
   }
 
+  getCallOptions(
+    ticker: string,
+    expiry: string
+  ): Observable<HttpResponse<OptionData[]>> {
+    return this.http.get<OptionData[]>(
+      `${this.serverUrl}/api/call-options?ticker=${ticker}&expiry=${expiry}`,
+      {
+        observe: 'response',
+      }
+    );
+  }
+
   getPutOptions(
     ticker: string,
     expiry: string

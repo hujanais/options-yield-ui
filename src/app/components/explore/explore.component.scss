@@ -66,19 +66,27 @@
 
     .div-result-body {
       display: flex;
-      flex-direction: row;
       width: 100%;
 
-      .div-result-body-data {
-        border: 2px solid green;
-        flex: 1;
-        margin: 5px;
-        max-width: 50%;
+      mat-tab-group {
+        width: 100%;
+      }
+
+      .div-tab-body {
         height: 450px;
       }
 
-      .div-result-tabbed-body {
-        height: 400px;
+      .div-2-column-body {
+        display: flex;
+        flex-direction: row;
+
+        .div-column {
+          border: 2px solid green;
+          flex: 1;
+          margin: 5px;
+          max-width: 50%;
+          height: 430px;
+        }
       }
     }
   }
