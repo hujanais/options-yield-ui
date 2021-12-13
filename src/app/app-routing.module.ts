@@ -7,7 +7,7 @@ import { SummaryComponent } from './components/summary/summary.component';
 const routes: Routes = [
   { path: 'quick-view', component: SummaryComponent },
   { path: 'explore', component: ExploreComponent },
-  { path: '', redirectTo: '/explore', pathMatch: 'full' },
+  { path: '', redirectTo: '/quick-view', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
 ];
 

@@ -3,6 +3,16 @@
   flex-direction: column;
   height: 100%;
   width: 100%;
+
+  .toolbar-row {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+
+    .toolbar-spacer {
+      flex: 1;
+    }
+  }
 }
 
 .div-router-output {

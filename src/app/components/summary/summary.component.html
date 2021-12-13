@@ -1,1 +1,31 @@
-<div class="container">Summary View</div>
+<div class="container">
+  <mat-card>
+    <mat-card-title> Overview and Disclaimers </mat-card-title>
+    <mat-card-content>
+      <p>
+        This is a convenience viewer for displaying covered-call and
+        cash-secured puts on many US listed stock as provided by Yahoo Finance.
+        I created this site for myself to quickly look at the call and put
+        premiums for stocks at different expiry dates.
+      </p>
+      <div class="disclaimer">
+        <div><mat-icon>warning</mat-icon></div>
+        <div>
+          The contents on this site are for informational and entertainment
+          purposes only and does not constitute financial, accounting, or legal
+          advice. I can't promise that the information shared by me is
+          appropriate for you or anyone else. Always do your own due dilligence.
+          The data comes from Yahoo Finance Python API but I cannot guarantee
+          accuracy and to be bug-free.
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-footer>
+      <a routerLink="../explore">
+        <button mat-raised-button color="primary">
+          I understand so take me to the dashboard
+        </button>
+      </a>
+    </mat-card-footer>
+  </mat-card>
+</div>

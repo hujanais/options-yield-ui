@@ -4,4 +4,29 @@
   height: 100%;
   align-items: center;
   justify-content: center;
+
+  mat-card {
+    width: 80%;
+    color: #ffffffaa;
+
+    mat-card-content {
+      font-size: large;
+
+      .disclaimer {
+        display: flex;
+        flex-direction: row;
+        padding: 5px;
+        align-items: center;
+
+        mat-icon {
+          margin: 10px;
+          color: orangered;
+        }
+      }
+    }
+  }
+
+  button {
+    margin: 10px;
+  }
 }

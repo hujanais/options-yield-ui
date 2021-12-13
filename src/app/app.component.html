@@ -1,13 +1,19 @@
 <div class="darkMode div-container">
   <mat-toolbar color="primary">
-    <button mat-button [matMenuTriggerFor]="menu">
-      <mat-icon>menu</mat-icon>
-    </button>
-    <mat-menu #menu="matMenu">
-      <button mat-menu-item routerLink="/quick-view">QuickView</button>
-      <button mat-menu-item routerLink="/explore">Explore</button>
-    </mat-menu>
-    <span>Call-Put Option Yield Explorer</span>
+    <div class="toolbar-row">
+      <button mat-button [matMenuTriggerFor]="menu">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item routerLink="/quick-view">About</button>
+        <button mat-menu-item routerLink="/explore">Explore</button>
+      </mat-menu>
+      <span>Call-Put Option Yield Explorer</span>
+      <div class="toolbar-spacer"></div>
+      <a routerLink="../quick-view">
+        <button mat-raised-button color="accent">Disclaimer!</button>
+      </a>
+    </div>
   </mat-toolbar>
   <div class="div-router-output mat-app-background">
     <router-outlet></router-outlet>

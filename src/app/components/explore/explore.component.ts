@@ -110,6 +110,9 @@ export class ExploreComponent implements OnInit {
       historicalPrices: [],
     };
     this.debugMessage = undefined;
+    this.callOptionsData = [];
+    this.putOptionsData = [];
+    this.selectedExpiry = undefined;
 
     let sbRef = this.snackBar.open('Retrieving Data...', undefined, {
       horizontalPosition: 'left',
