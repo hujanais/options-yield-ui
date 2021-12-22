@@ -1,0 +1,41 @@
+<div class="container">
+  <mat-card>
+    <mat-card-title>Quick startup guide</mat-card-title>
+    <mat-card-subtitle>Follow these steps to get started</mat-card-subtitle>
+    <mat-card-content>
+      <mat-list>
+        <mat-list-item
+          ><li>Enter the ticker of interest, e.g RKLB</li>
+        </mat-list-item>
+        <mat-list-item
+          ><li>
+            Press the Get meta-data button. When this completes, you will see
+            the 3-yr price in the historical-price tab
+          </li></mat-list-item
+        >
+        <mat-list-item>
+          <li>
+            Now you can select the expiry date from the drop-down. After pulling
+            few seconds, the put-options and call-options data will be populated
+            for that security and the options for the selected expiry date. Just
+            click on the put-options/call-options tab to see the strike-prices
+            and premiums
+          </li>
+        </mat-list-item>
+        <mat-list-item>
+          <li>
+            Well that's all. Rinse and repeat for next ticker of interest and/or
+            expiry date.
+          </li>
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+    <mat-card-footer>
+      <a routerLink="../explore">
+        <button mat-raised-button color="primary">
+          I understand so take me to the dashboard
+        </button>
+      </a>
+    </mat-card-footer>
+  </mat-card>
+</div>

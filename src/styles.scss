@@ -3,7 +3,7 @@
 @use "@angular/material" as mat;
 
 @import "~@angular/material/theming";
-
+@import "~@angular/cdk/overlay-prebuilt.css";
 @include mat.core();
 
 $angular-primary: mat.define-palette(mat.$blue-grey-palette, 500, 100, 900);

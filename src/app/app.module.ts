@@ -25,6 +25,8 @@ import { ExploreComponent } from './components/explore/explore.component';
 import { SummaryComponent } from './components/summary/summary.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { PriceGraphComponent } from './components/price-graph/price-graph.component';
+import { HelpComponent } from './components/help/help.component';
+import { MatListModule } from '@angular/material/list';
 
 @NgModule({
   declarations: [
@@ -35,6 +37,7 @@ import { PriceGraphComponent } from './components/price-graph/price-graph.compon
     SummaryComponent,
     PageNotFoundComponent,
     PriceGraphComponent,
+    HelpComponent,
   ],
   imports: [
     BrowserModule,
@@ -57,6 +60,7 @@ import { PriceGraphComponent } from './components/price-graph/price-graph.compon
     MatSnackBarModule,
     MatTabsModule,
     MatIconModule,
+    MatListModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
