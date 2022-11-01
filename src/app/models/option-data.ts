@@ -5,4 +5,5 @@ export type OptionData = {
   LastPrice: number;
   Volume: number;
   OpenInterest: number;
+  IV: number;
 };

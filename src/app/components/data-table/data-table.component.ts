@@ -16,6 +16,7 @@ export class DataTableComponent implements OnInit {
     'lastprice',
     'volume',
     'openinterest',
+    'iv',
   ];
   public dataSource: MatTableDataSource<OptionData> =
     new MatTableDataSource<OptionData>();
