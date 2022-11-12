@@ -13,6 +13,8 @@ export class DataTableComponent implements OnInit {
     'strike',
     'offset',
     'yield',
+    'bid',
+    'ask',
     'lastprice',
     'volume',
     'openinterest',

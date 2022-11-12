@@ -22,6 +22,20 @@
       </td>
     </ng-container>
 
+    <ng-container matColumnDef="bid">
+      <th mat-header-cell *matHeaderCellDef>Bid</th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.Bid | number: "1.2-2" }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="ask">
+      <th mat-header-cell *matHeaderCellDef>Ask</th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.Ask | number: "1.2-2" }}
+      </td>
+    </ng-container>
+
     <ng-container matColumnDef="lastprice">
       <th mat-header-cell *matHeaderCellDef>Last Price</th>
       <td mat-cell *matCellDef="let element">
