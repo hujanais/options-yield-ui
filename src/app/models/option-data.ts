@@ -8,4 +8,5 @@ export type OptionData = {
   Volume: number;
   OpenInterest: number;
   IV: number;
+  Prob: number;
 };

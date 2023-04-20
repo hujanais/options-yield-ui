@@ -19,6 +19,7 @@ export class DataTableComponent implements OnInit {
     'volume',
     'openinterest',
     'iv',
+    'prob'
   ];
   public dataSource: MatTableDataSource<OptionData> =
     new MatTableDataSource<OptionData>();
@@ -37,7 +38,7 @@ export class DataTableComponent implements OnInit {
     return this._optionsData;
   }
 
-  constructor() {}
+  constructor() { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 }
